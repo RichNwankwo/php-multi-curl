@@ -1,11 +1,11 @@
 PHP Multi-Curl
 ======
 
-A simple and efficient library wrapping curl_multi_* is used to handle parallel http requests.
+A simple and efficient library wrapping curl_multi_* is used to handle parallel http requests. 5.3 compatible
 
 ## Requirements
 
-* PHP 5.4 or later
+* PHP 5.3 or later
 * PHP cURL extension
 
 ## Installation via Composer([packagist](https://packagist.org/packages/hhxsv5/php-multi-curl))
