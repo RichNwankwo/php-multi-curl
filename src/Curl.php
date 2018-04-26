@@ -25,14 +25,14 @@ class Curl extends BaseCurl
         CURLOPT_USERAGENT      => 'PHP Multi Curl Client V1.0',
     ];
 
-    protected function init(array $options = [])
+    protected function init(array $options = array())
     {
         $this->handle = curl_init();
         $finalOptions = $options + self::$defaultOptions;
         curl_setopt_array($this->handle, $finalOptions);
     }
 
-    public function makeGet($url, $params = null, array $headers = [])
+    public function makeGet($url, $params = null, array $headers = array())
     {
         if (is_string($params) || is_array($params)) {
             is_array($params) AND $params = http_build_query($params);
@@ -49,7 +49,7 @@ class Curl extends BaseCurl
         $headers AND curl_setopt($this->handle, CURLOPT_HTTPHEADER, $headers);
     }
 
-    public function makePost($url, $params = null, array $headers = [])
+    public function makePost($url, $params = null, array $headers = array())
     {
         curl_setopt($this->handle, CURLOPT_URL, $url);
         curl_setopt($this->handle, CURLOPT_POST, true);//HTTP POST
@@ -74,7 +74,7 @@ class Curl extends BaseCurl
         $headers AND curl_setopt($this->handle, CURLOPT_HTTPHEADER, $headers);
     }
 
-    public function exec(array $options = [])
+    public function exec(array $options = array())
     {
         $response = curl_exec($this->handle);
 

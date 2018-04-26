@@ -14,14 +14,14 @@ abstract class BaseCurl
      */
     protected $error;
 
-    public function __construct(array $options = [])
+    public function __construct(array $options = array())
     {
         $this->init($options);
     }
 
-    abstract protected function init(array $options = []);
+    abstract protected function init(array $options = array());
 
-    abstract protected function exec(array $options = []);
+    abstract protected function exec(array $options = array());
 
     abstract protected function hasError();
 

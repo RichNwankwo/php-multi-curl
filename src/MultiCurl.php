@@ -7,9 +7,9 @@ class MultiCurl extends BaseCurl
     /**
      * @var Curl[]
      */
-    protected $curls = [];
+    protected $curls = array();
 
-    protected function init(array $options = [])
+    protected function init(array $options = array())
     {
         $this->handle = curl_multi_init();
 
@@ -41,7 +41,7 @@ class MultiCurl extends BaseCurl
         return true;
     }
 
-    public function exec(array $options = [])
+    public function exec(array $options = array())
     {
         if (count($this->curls) == 0) {
             return false;
@@ -78,7 +78,7 @@ class MultiCurl extends BaseCurl
 
             curl_multi_remove_handle($this->handle, $curl->getHandle());
         }
-        $this->curls = [];
+        $this->curls = array();
 
         return $success;
     }
