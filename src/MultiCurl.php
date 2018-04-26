@@ -72,7 +72,7 @@ class MultiCurl extends BaseCurl
             $errno = curl_errno($handle);
             $error = curl_error($handle);//Fixed: curl_errno() always return 0 when fail
             if ($errno || $error) {
-                $curl->setError([$errno, $error]);
+                $curl->setError(array($errno, $error));
                 $success = false;
             }
 

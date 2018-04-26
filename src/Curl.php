@@ -8,7 +8,7 @@ class Curl extends BaseCurl
 
     protected $multi = false;
 
-    protected static $defaultOptions = [
+    protected static $defaultOptions = array(
         //bool
         CURLOPT_HEADER         => false,
         CURLOPT_SSL_VERIFYPEER => false,
@@ -23,7 +23,7 @@ class Curl extends BaseCurl
 
         //string
         CURLOPT_USERAGENT      => 'PHP Multi Curl Client V1.0',
-    ];
+    );
 
     protected function init(array $options = array())
     {
@@ -112,7 +112,7 @@ class Curl extends BaseCurl
         $errno = curl_errno($this->handle);
         $error = curl_error($this->handle);//Fix: curl_errno() always return 0 when fail
         if ($errno || $error) {
-            $this->error = [$errno, $error];
+            $this->error = array($errno, $error);
             return true;
         }
         return false;
